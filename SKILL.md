@@ -63,3 +63,17 @@ python scripts/art_caption.py --text "我不服！" --preset type-clash --out ou
 
 ## 最高优先级：AI 生图主流程（重要修订）
 **必须先阅读 `references/imagegen-art-direction.md`。** 对“有创意、别土、像真实综艺美术”的任务，主路线必须是：语义理解 → 三个真正不同的视觉隐喻 → 用宿主提供的图像生成工具完成美术关键帧 → 校正中文文字与分层 → 静态审稿 → 剪映交付。不得先用固定矩形/爆炸框或旧 Pillow 预设冒充原创美术设计。只有在缺乏图像生成能力时，才输出详细生图提示词并明确无法生成图片。旧脚本只是低保真辅助工具。正式 AI 图像生成调用依赖宿主环境，**仓库尚未内置图像模型 API 或一键生成服务**。
+
+
+## V0.3：综艺剪辑导演（先剪故事，再做花字）
+在任何长视频、短视频、活动视频的综艺包装任务中，先阅读 `references/editing-director.md` 和 `references/jianying-shotbook.md`，分析真实镜头中的铺垫、期待、揭晓、反应和余味，选择正常剪辑、定格、慢放、重复回放、反应镜头、静音留白等方法。**剪辑和字体/插画必须共同完成一个笑点**。
+
+已经加入基于 FFmpeg 的人工时间线执行器：
+```bash
+python scripts/generate_test_media.py
+python scripts/variety_edit.py examples/clip-plan.example.json --out outputs/variety_edit.mp4
+python scripts/mix_sfx.py outputs/variety_edit.mp4 examples/sfx-plan.example.json --out outputs/with-sfx.mp4
+```
+需先安装 ffmpeg、ffprobe、Pillow。示例使用合成测试画面和原创短音，不涉及真实综艺版权片段。
+
+注意：这是**用户指定时间码的剪辑执行器**，并非自动视频内容识别、自动生成笑点或直接生成剪映草稿。需要真实素材时先查看和核对原片。AI 生图仍须由宿主提供图像生成工具，Skill 目前没有内置可用的图像生成 API。
