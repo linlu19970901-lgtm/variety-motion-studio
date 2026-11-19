@@ -1,0 +1,12 @@
+[
+  {
+    "file": "examples/original-pop.wav",
+    "at": 2,
+    "volume": 0.32
+  },
+  {
+    "file": "examples/original-pop.wav",
+    "at": 4.55,
+    "volume": 0.22
+  }
+]
