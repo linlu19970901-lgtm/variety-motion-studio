@@ -1,0 +1,36 @@
+{
+  "case_id": "VAR-0001",
+  "show": "",
+  "season": "",
+  "source": {
+    "type": "official_video",
+    "url": "",
+    "episode": "",
+    "timecode_in": null,
+    "timecode_out": null
+  },
+  "verification": {
+    "status": "pending_frame_review",
+    "production_credit": "unverified"
+  },
+  "content": {
+    "scene_summary": "",
+    "dialogue": "",
+    "humor_mechanism": ""
+  },
+  "design": {
+    "typography": {},
+    "illustration": {},
+    "palette": [],
+    "composition": {},
+    "spatial_integration": {}
+  },
+  "motion": {
+    "entry": "",
+    "hold": "",
+    "exit": "",
+    "timing": {}
+  },
+  "creative_principle": "",
+  "original_adaptation": ""
+}
