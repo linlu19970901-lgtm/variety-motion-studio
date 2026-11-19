@@ -1,0 +1,78 @@
+{
+  "version": "0.5.0",
+  "workflow": "jianying-native-first",
+  "platform": "jianying-desktop",
+  "verified_in_target_version": false,
+  "scene": "说好只是散步，结果直接开跳",
+  "comic_mechanism": "由脚印行走切换为跳跃轨迹",
+  "level": 2,
+  "timeline": {
+    "clip_anchor": "反转动作开始的真实时间点（由剪辑者填写）",
+    "overlay_duration_ms": 1800
+  },
+  "layers": [
+    {
+      "id": "feet",
+      "file": "02_素材/脚印_透明.png",
+      "role": "语义动作",
+      "keyframes": [
+        {
+          "t_ms": 0,
+          "x_pct": 20,
+          "y_pct": 80,
+          "scale_pct": 80,
+          "opacity_pct": 0
+        },
+        {
+          "t_ms": 100,
+          "x_pct": 30,
+          "y_pct": 80,
+          "scale_pct": 90,
+          "opacity_pct": 100
+        },
+        {
+          "t_ms": 500,
+          "x_pct": 45,
+          "y_pct": 78,
+          "scale_pct": 100,
+          "opacity_pct": 100
+        }
+      ]
+    },
+    {
+      "id": "text",
+      "file": "02_素材/花字_透明.png",
+      "role": "准确文案",
+      "keyframes": [
+        {
+          "t_ms": 500,
+          "scale_pct": 85,
+          "opacity_pct": 0
+        },
+        {
+          "t_ms": 650,
+          "scale_pct": 108,
+          "opacity_pct": 100
+        },
+        {
+          "t_ms": 770,
+          "scale_pct": 100,
+          "opacity_pct": 100
+        },
+        {
+          "t_ms": 1750,
+          "scale_pct": 100,
+          "opacity_pct": 0
+        }
+      ]
+    }
+  ],
+  "sfx": {
+    "at_ms": 620,
+    "file": "04_音效/合法授权_轻弹音.wav",
+    "volume_relative": "轻于对白"
+  },
+  "safe_area": "避开人物面部、舞步动作及原有字幕",
+  "fallback": "不支持多关键帧时，将 PNG 贴在上轨道使用入场/出场动画，或导入已验证格式的分帧素材。",
+  "note": "示例参数，非真实节目镜头分析或剪映兼容性测试证明"
+}
