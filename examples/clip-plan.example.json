@@ -1,0 +1,48 @@
+{
+  "source": "examples/sample.mp4",
+  "fps": 30,
+  "clips": [
+    {
+      "type": "normal",
+      "start": 0,
+      "end": 2,
+      "note": "铺垫"
+    },
+    {
+      "type": "freeze",
+      "start": 2,
+      "hold": 0.55,
+      "note": "定格"
+    },
+    {
+      "type": "speed",
+      "start": 2,
+      "end": 3.3,
+      "speed": 0.65,
+      "note": "慢放"
+    },
+    {
+      "type": "replay",
+      "start": 2.3,
+      "end": 3,
+      "speed": 1,
+      "note": "回放"
+    },
+    {
+      "type": "normal",
+      "start": 3.3,
+      "end": 5,
+      "note": "回到现场"
+    }
+  ],
+  "overlays": [
+    {
+      "file": "examples/caption.png",
+      "start": 2,
+      "end": 2.55,
+      "scale": 0.5,
+      "x": 0.5,
+      "y": 0.75
+    }
+  ]
+}
