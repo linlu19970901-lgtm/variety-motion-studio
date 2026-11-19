@@ -3,11 +3,18 @@ name: variety-motion-studio
 description: 为中文综艺、访谈、活动短视频设计原创高审美花字、笑点文案、趣味贴片与剪映可用素材。先理解内容和创意提案，再做静态美术、动效规划和剪映交付。适用于用户要求综艺花字、视频包装、趣味字幕、后期包装、剪映贴片、综艺感短视频时。
 license: MIT
 metadata:
-  version: 0.1.0
+  version: 0.4.0
   language: zh-CN
 ---
 
 # Variety Motion Studio — 综艺视觉创意与剪映交付 Skill
+
+## 当前最高优先级：透明动态综艺贴片（用户验证方向，v0.4）
+**任何花字/贴片制作先读取 `references/transparent-motion-stickers.md`，其交付规则优先于前文旧版静态海报和几何字卡说明。** 用户明确肯定透明底动态贴片，明确否定整屏封面/PPT风格。核心产物应是独立小尺寸视觉元素，真正 RGBA 透明背景；默认结合节目镜头与台词做语义动作，而非整屏背景/人物拼贴。静态方案只是视觉审核关键帧，最终优先交付透明动态素材、分帧 PNG 与真实叠加预览。动态要表现“物件或字义转变”，不能只是缩放弹跳。中文文字必须准确，生成逐帧不一致时重做或拆为准确文字层。
+
+如果宿主图像工具支持生成 GIF/动画精灵表，应据真实能力调用；输出后务必检查透明 alpha。可用 `scripts/export_animated_overlay.py` 从真正带 alpha 的规则网格精灵表制作 APNG、GIF，以及可选 VP9-alpha WebM，但**不代表剪映一定支持对应动态格式**；必须实测目标版本，兜底逐帧 PNG 或静态 PNG 结合剪映内建动画。脚本不调用生图模型，真正的视觉设计依赖宿主生图能力。旧式几何预设不可自动用于最终交付。
+
+示例：`python scripts/export_animated_overlay.py spritesheet.png --rows 2 --columns 3 --frames 6 --duration-ms 180 --out outputs/animated-sticker`
 
 ## 核心原则
 不是给所有台词加粗描边字，而是像专业综艺后期美术团队一样：理解笑点 → 发现视觉隐喻 → 提案 → 设计静态关键帧 → 审稿 → 制定动效 → 剪映交付。**静态设计不够好看，不进入动态制作。**
