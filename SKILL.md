@@ -50,3 +50,13 @@ python scripts/make_caption.py --text "压力山大" --preset editorial --out ou
 ## 版本边界
 V0.1.0 实现原创静态花字渲染、可复用设计 JSON、创意工作流、案例来源索引及剪映教程；不包含自动视频理解、人物跟踪、动态视频渲染、剪映草稿写入或 30 款成品模板。
 后续路线见 `ROADMAP.md`。
+
+
+## V0.2 新增视觉设计路线
+当用户强调“高级感、创意、不要模板味”时，阅读 `references/v02-art-direction.md`，先给出三种视觉隐喻方案。对短语可以调用 `scripts/art_caption.py` 输出透明 PNG 和 JSON：
+```bash
+python scripts/art_caption.py --text "这下玩大了！" --preset comic-punch --out outputs/caption.png
+python scripts/art_caption.py --text "慢一点，也很好" --preset field-notes --out outputs/field.png
+python scripts/art_caption.py --text "我不服！" --preset type-clash --out outputs/type.png
+```
+三个预设只是 **可执行的初始艺术组件**。复杂手绘、真实字体变形、场景透视合成与动态透明视频仍需要额外制作，不要夸大能力。
