@@ -60,3 +60,6 @@ python scripts/art_caption.py --text "慢一点，也很好" --preset field-note
 python scripts/art_caption.py --text "我不服！" --preset type-clash --out outputs/type.png
 ```
 三个预设只是 **可执行的初始艺术组件**。复杂手绘、真实字体变形、场景透视合成与动态透明视频仍需要额外制作，不要夸大能力。
+
+## 最高优先级：AI 生图主流程（重要修订）
+**必须先阅读 `references/imagegen-art-direction.md`。** 对“有创意、别土、像真实综艺美术”的任务，主路线必须是：语义理解 → 三个真正不同的视觉隐喻 → 用宿主提供的图像生成工具完成美术关键帧 → 校正中文文字与分层 → 静态审稿 → 剪映交付。不得先用固定矩形/爆炸框或旧 Pillow 预设冒充原创美术设计。只有在缺乏图像生成能力时，才输出详细生图提示词并明确无法生成图片。旧脚本只是低保真辅助工具。正式 AI 图像生成调用依赖宿主环境，**仓库尚未内置图像模型 API 或一键生成服务**。
