@@ -38,3 +38,16 @@ python scripts/make_caption.py --text "压力山大" --preset editorial --size 1
 v0.1.0 为**可运行的静态花字工具和 Agent 工作流初版**，不具备自动分析原视频、自动制作动态透明视频、追踪人物和自动写入剪映草稿的完整能力。这些属于 [路线图](ROADMAP.md)。
 
 所有节目名及公开案例仅供分析设计方法。未分发节目原片、受版权保护的截图或第三方代码。仓库原创代码和文档采用 MIT 许可。
+
+
+## V0.2 艺术化花字升级（新）
+新脚本不替代旧脚本，新增更明确的字体舞台与图形语言：喜剧爆点 / 自然手作 / 观点碰撞。输出透明 PNG + 同名可复用 JSON，支持副标题与自定义字体。它们是可工作的入门美术组件，不等于电视台级定制花字，也不是动态视频。
+
+```bash
+python scripts/art_caption.py --list-presets
+python scripts/art_caption.py --text "这下玩大了！" --preset comic-punch --out outputs/comic.png
+python scripts/art_caption.py --text "慢一点，也很好" --preset field-notes --out outputs/organic.png
+python scripts/art_caption.py --text "我不服！" --subtitle "观点正在交锋" --preset type-clash --out outputs/editorial.png
+```
+
+设计原则：[原创美术策略](references/v02-art-direction.md)。已在本地以 Pillow 生成三张透明 PNG 原型，GitHub 中的脚本已提交，建议按 README 环境安装后在本机运行验证。
