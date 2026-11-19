@@ -51,3 +51,6 @@ python scripts/art_caption.py --text "我不服！" --subtitle "观点正在交�
 ```
 
 设计原则：[原创美术策略](references/v02-art-direction.md)。已在本地以 Pillow 生成三张透明 PNG 原型，GitHub 中的脚本已提交，建议按 README 环境安装后在本机运行验证。
+
+## 重要设计方向修订：AI 生图优先
+此前 Python Pillow 预设产生了明显 PPT / 模板感，也不能依据台词独立创作。该路线不再作为主美术输出。新的 [生图美术工作流](references/imagegen-art-direction.md) 要求使用支持图像生成的 Agent/环境，先构思语义相关视觉隐喻，再用图像模型创作插画和字体美术；使用可编辑准确文字层校正中文，最后提供剪映透明 PNG 素材。当前仓库仅提供 Agent 工作流规范，**尚未接入自动调用图像生成 API**。原有 Python 脚本保留为基础排版测试工具，不作为专业成品示例。
