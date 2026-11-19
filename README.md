@@ -54,3 +54,18 @@ python scripts/art_caption.py --text "我不服！" --subtitle "观点正在交�
 
 ## 重要设计方向修订：AI 生图优先
 此前 Python Pillow 预设产生了明显 PPT / 模板感，也不能依据台词独立创作。该路线不再作为主美术输出。新的 [生图美术工作流](references/imagegen-art-direction.md) 要求使用支持图像生成的 Agent/环境，先构思语义相关视觉隐喻，再用图像模型创作插画和字体美术；使用可编辑准确文字层校正中文，最后提供剪映透明 PNG 素材。当前仓库仅提供 Agent 工作流规范，**尚未接入自动调用图像生成 API**。原有 Python 脚本保留为基础排版测试工具，不作为专业成品示例。
+
+
+## V0.3 新增：综艺剪辑语言与可运行视频执行器
+新增 [综艺剪辑导演](references/editing-director.md) 和 [剪映零基础操作卡](references/jianying-shotbook.md)，将**铺垫→反转→反应→花字→音效**串成一条逻辑，而不只是单独做字卡。
+
+安装 FFmpeg/ffprobe 和 Python Pillow 后，在仓库根目录执行：
+```bash
+python scripts/generate_test_media.py
+python scripts/variety_edit.py examples/clip-plan.example.json --out outputs/variety_edit.mp4
+python scripts/mix_sfx.py outputs/variety_edit.mp4 examples/sfx-plan.example.json --out outputs/with-sfx.mp4
+```
+
+现在可以按 JSON 时间码组合正常播放、变速、定格、重复回放、透明 PNG 叠加以及定点音效。测试媒体由 `generate_test_media.py` 生成，不上传节目版权素材。
+
+**功能边界：** 需人工提供剪辑时间码，不能自动看懂表情和梗；AI 图像模型依赖宿主环境，还没有作为独立 API 服务集成；并未实现剪映工程文件写入。真实项目仍需专业审稿与素材授权。
