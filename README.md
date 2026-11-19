@@ -1,8 +1,20 @@
-# Variety Motion Studio v0.1.0
+# Variety Motion Studio v0.4.0
 
 **面向剪映新手的原创综艺花字与视频包装设计 Skill。**
 
 聚焦三件事：有创意的花字文案、统一的专业美术设计，以及能被剪映直接使用的透明 PNG 素材。
+
+## v0.4 — 透明动态贴片：目前主设计路线
+
+经过实际视觉测试，**整屏海报式花字虽然热闹，却不适合叠加到综艺正片**。用户认可的是紧凑、独立、透明底、有语义动作变化的动效贴片。当前的最高优先级文档是：[透明动态贴片设计与交付规范](references/transparent-motion-stickers.md)。
+
+新增分帧导出脚本，将**真正带 RGBA alpha** 的等尺寸精灵表转为 APNG 和 GIF；可选生成 VP9-alpha WebM。此脚本不生成原创美术图，需由宿主生图工具先生成素材：
+
+```bash
+python scripts/export_animated_overlay.py spritesheet.png --rows 2 --columns 3 --frames 6 --duration-ms 180 --out outputs/animated-sticker
+```
+
+注意：GIF 透明度和边缘表现有限；剪映/CapCut 的版本对 GIF、APNG、WebM 兼容性可能不同。没有经过目标环境实测的格式不得声称能直接导入；最可靠的兜底方案仍是 PNG 分帧或静态透明 PNG + 剪映内置动画。本仓库目前尚无自动生成全部设计并一键成片的服务。
 
 ## 当前可用功能
 - Agent Skill 工作流：理解台词 → 三案创意 → 美术审核 → 剪映交付
