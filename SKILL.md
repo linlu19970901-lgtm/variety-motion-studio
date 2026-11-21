@@ -1,13 +1,18 @@
 ---
 name: variety-motion-studio
-description: 为中文综艺、访谈、活动短视频设计原创高审美花字、笑点文案、趣味贴片与剪映可用素材。先理解内容和创意提案，再做静态美术、动效规划和剪映交付。适用于用户要求综艺花字、视频包装、趣味字幕、后期包装、剪映贴片、综艺感短视频时。
+description: 为中文综艺、访谈、活动短视频设计原创高审美花字、笑点文案、趣味贴片、真人肖像动态表情包与剪映可用素材。先理解内容和创意提案，再做静态美术、动效规划和剪映交付。适用于用户要求综艺花字、视频包装、趣味字幕、后期包装、剪映贴片、综艺感短视频时。
 license: MIT
 metadata:
-  version: 0.5.0
+  version: 0.6.0
   language: zh-CN
 ---
 
 # Variety Motion Studio — 综艺视觉创意与剪映交付 Skill
+
+## v0.6 新增：真人肖像动态贴纸工作流
+当用户提供真人参考照片，希望制作「真人头像透明 GIF / 表情包 / 三段情绪变化 / 综艺人物反应贴纸」时，**必须读取 `references/realistic-portrait-sticker-motion.md`**，并结合 `references/transparent-motion-stickers.md` 和 `references/jianying-native-first.md`。该专用分支允许授权真人头像，与普通花字禁用摄影人物的原则区分。流程必须是：身份一致性与授权确认 → 精细头部裁切 → 锁定位置和比例 → 情绪分镜与贴纸分层 → 中间帧/剪映关键帧 → 真正透明的 GIF/APNG/PNG 帧交付 → Alpha 及多背景审核。**精灵表不是动画文件，棋盘格不等于 Alpha，未经编码和验证不能宣称制作完成。**
+
+
 
 ## v0.5 最高优先级补充：剪映原生动效优先
 处理任何「剪映可用」「透明动效贴片」「综艺剪辑」请求时，**必须阅读 `references/jianying-native-first.md`**；它与 `references/transparent-motion-stickers.md` 共同约束输出。遵循以下顺序：
